@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-
+const Button = (props) => (
+  <button onClick={props.handleClick}> 
+    {props.text}
+  </button>
+  )
 
 const App = () => {
   const anecdotes = [
@@ -38,13 +42,9 @@ const App = () => {
       <p>{anecdotes[selected]}</p>
       <p>has {points[selected]} votes</p>
 
-      <button onClick={vote}>
-        vote
-      </button>
+      <Button handleClick={vote} text = "vote"/>
 
-      <button onClick={random}> 
-        next anecdote
-      </button>
+      <Button handleClick={random} text = "next anecdote"/>
 
       <h1>Anecdote with most votes</h1>
 
